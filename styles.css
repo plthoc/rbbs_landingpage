@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background: #000;
+  color: #fff;
+}
+
+body {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ascii-snow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  gap: clamp(1.25rem, 4vh, 2.5rem);
+}
+
+.ascii-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  contain: layout style paint;
+}
+
+.ascii-art {
+  font-family: inherit;
+  font-size: clamp(0.18rem, 0.68vw, 0.38rem);
+  font-weight: 300;
+  line-height: 1.12;
+  letter-spacing: 0;
+  white-space: pre;
+  text-align: center;
+  border: none;
+  background: transparent;
+  margin: 0 auto;
+  width: max-content;
+  max-width: min(100%, max-content);
+  overflow-x: auto;
+}
+
+.ascii-art .c {
+  display: inline;
+}
+
+.countdown {
+  font-family: inherit;
+  font-size: clamp(0.85rem, 2.2vw, 1.05rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: #fff;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .ascii-art {
+    font-size: 0.16rem;
+  }
+
+  .countdown {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+  }
+}
